@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'User Profile']) ?>
+<?php $this->layout('layout', ['title' => 'About Page']) ?>
 
 <h1>About page</h1>
-<p><?=$this->e($title)?></p>
+<p><?=$this->e($name)?></p>
