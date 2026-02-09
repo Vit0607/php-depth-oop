@@ -1,10 +1,18 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+if( !session_id() ) {
+    session_start();
+}
 
 require '../vendor/autoload.php';
 
+
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/users', ['App\Controllers\HomeController', 'index']);
-    $r->addRoute('GET', '/about', ['App\Controllers\HomeController', 'about']);
+    $r->addRoute('GET', '/about/{amount:\d+}', ['App\Controllers\HomeController', 'about']);
 });
 
 // Fetch method and URI from somewhere
