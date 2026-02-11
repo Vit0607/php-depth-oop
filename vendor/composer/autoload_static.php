@@ -17,6 +17,10 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         array (
             'Tamtamchik\\SimpleFlash\\' => 23,
         ),
+        'P' => 
+        array (
+            'ParagonIE\\ConstantTime\\' => 23,
+        ),
         'L' => 
         array (
             'League\\Plates\\' => 14,
@@ -28,6 +32,15 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         'F' => 
         array (
             'FastRoute\\' => 10,
+        ),
+        'D' => 
+        array (
+            'Delight\\Otp\\' => 12,
+            'Delight\\Http\\' => 13,
+            'Delight\\Db\\' => 11,
+            'Delight\\Cookie\\' => 15,
+            'Delight\\Base64\\' => 15,
+            'Delight\\Auth\\' => 13,
         ),
         'A' => 
         array (
@@ -41,6 +54,10 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         array (
             0 => __DIR__ . '/..' . '/tamtamchik/simple-flash/src',
         ),
+        'ParagonIE\\ConstantTime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
+        ),
         'League\\Plates\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/plates/src',
@@ -52,6 +69,30 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
+        ),
+        'Delight\\Otp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/delight-im/otp/src',
+        ),
+        'Delight\\Http\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/delight-im/http/src',
+        ),
+        'Delight\\Db\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/delight-im/db/src',
+        ),
+        'Delight\\Cookie\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/delight-im/cookie/src',
+        ),
+        'Delight\\Base64\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/delight-im/base64/src',
+        ),
+        'Delight\\Auth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/delight-im/auth/src',
         ),
         'Aura\\SqlQuery\\' => 
         array (

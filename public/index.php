@@ -12,7 +12,9 @@ require '../vendor/autoload.php';
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/users', ['App\Controllers\HomeController', 'index']);
-    $r->addRoute('GET', '/about/{amount:\d+}', ['App\Controllers\HomeController', 'about']);
+    $r->addRoute('GET', '/about', ['App\Controllers\HomeController', 'about']);
+    $r->addRoute('GET', '/verification', ['App\Controllers\HomeController', 'email_verification']);
+    $r->addRoute('GET', '/login', ['App\Controllers\HomeController', 'login']);
 });
 
 // Fetch method and URI from somewhere
