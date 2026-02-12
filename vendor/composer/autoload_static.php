@@ -106,6 +106,7 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'SimpleMail' => __DIR__ . '/..' . '/eoghanobrien/php-simple-mail/class.simple_mail.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -9,6 +9,12 @@ if( !session_id() ) {
 
 require '../vendor/autoload.php';
 
+var_dump(SimpleMail::make()
+->setTo('jvn5@mail.ru', 'Vit')
+->setSubject('Офигенская тема')
+->setMessage('Привет! Как дела?')
+->send());
+
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/users', ['App\Controllers\HomeController', 'index']);
