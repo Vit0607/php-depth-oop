@@ -26,7 +26,7 @@ class HomeController {
         $this->auth->login('jvn4@mail.ru', '123');
     
         $db = new QueryBuilder;
-        $posts = $db->getAll('posts');
+        $posts = $db->getPages('posts', 3);
 
         echo $this->templates->render('homepage', ['postsInView' => $posts]);
     }

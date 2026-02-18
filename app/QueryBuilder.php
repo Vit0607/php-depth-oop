@@ -31,6 +31,22 @@ class QueryBuilder {
 
     }
 
+    public function getPages($table, $paging) {
+
+        $select = $this->queryFactory->newSelect();
+
+        $select->cols(['*'])->from($table)->setPaging($paging)->page($_GET['page'] ?? 1);
+
+        $sth = $this->pdo->prepare($select->getStatement());
+
+        $sth->execute($select->getBindValues());
+
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+
+    }
+
     public function insert($data, $table) {
         $insert = $this->queryFactory->newInsert();
 

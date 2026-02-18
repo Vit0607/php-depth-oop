@@ -6,7 +6,8 @@
         "nikic/fast-route": "^1.3",
         "delight-im/auth": "^9.0",
         "eoghanobrien/php-simple-mail": "^1.7",
-        "fakerphp/faker": "1.20"
+        "fakerphp/faker": "1.20",
+        "jasongrimes/paginator": "^1.0"
     },
 
     "autoload": {
