@@ -1,7 +1,13 @@
 <?php
+
+use Aura\SqlQuery\QueryFactory;
+
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
 ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 if( !session_id() ) {
     session_start();
@@ -9,15 +15,30 @@ if( !session_id() ) {
 
 require '../vendor/autoload.php';
 
-var_dump(SimpleMail::make()
-->setTo('jvn5@mail.ru', 'Vit')
-->setSubject('Офигенская тема')
-->setMessage('Привет! Как дела?')
-->send());
+$faker = Faker\Factory::create();
+
+$pdo = new PDO("mysql:host=MySQL-8.4;dbname=app3;charset=utf8", "root", "");
+$queryFactory = new QueryFactory('mysql');
+
+// $insert = $queryFactory->newInsert();
+
+// // insert into this table
+// $insert->into('posts');
+
+// for ($i=0; $i < 30; $i++) {
+//     $insert->cols([
+//         'title' => $faker->words(3, true),
+//         'content' => $faker->text()
+//     ]);
+//     $insert->addRow();
+// }
+
+// $sth = $pdo->prepare($insert->getStatement());
+// $sth->execute($insert->getBindValues());
 
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/users', ['App\Controllers\HomeController', 'index']);
+    $r->addRoute('GET', '/posts', ['App\Controllers\HomeController', 'index']);
     $r->addRoute('GET', '/about', ['App\Controllers\HomeController', 'about']);
     $r->addRoute('GET', '/verification', ['App\Controllers\HomeController', 'email_verification']);
     $r->addRoute('GET', '/login', ['App\Controllers\HomeController', 'login']);
@@ -58,3 +79,5 @@ switch ($routeInfo[0]) {
 function get_user_handler($vars) {
     d($vars['id']);
 }
+
+?>

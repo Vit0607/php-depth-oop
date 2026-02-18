@@ -4,9 +4,10 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit8d070178755c320c69f93ee4800660ef
+class ComposerStaticInitb7618ec33a968263e31e7a90ec0c7d9d
 {
     public static $files = array (
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '3917c79c5052b270641b5a200963dbc2' => __DIR__ . '/..' . '/kint-php/kint/init.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         '6157b075b923803e5ef157aeb43b83bd' => __DIR__ . '/..' . '/tamtamchik/simple-flash/src/function.php',
@@ -19,6 +20,7 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         ),
         'P' => 
         array (
+            'Psr\\Container\\' => 14,
             'ParagonIE\\ConstantTime\\' => 23,
         ),
         'L' => 
@@ -32,6 +34,7 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         'F' => 
         array (
             'FastRoute\\' => 10,
+            'Faker\\' => 6,
         ),
         'D' => 
         array (
@@ -54,6 +57,10 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         array (
             0 => __DIR__ . '/..' . '/tamtamchik/simple-flash/src',
         ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
         'ParagonIE\\ConstantTime\\' => 
         array (
             0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
@@ -69,6 +76,10 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
         'Delight\\Otp\\' => 
         array (
@@ -112,9 +123,9 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit8d070178755c320c69f93ee4800660ef::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit8d070178755c320c69f93ee4800660ef::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit8d070178755c320c69f93ee4800660ef::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb7618ec33a968263e31e7a90ec0c7d9d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb7618ec33a968263e31e7a90ec0c7d9d::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitb7618ec33a968263e31e7a90ec0c7d9d::$classMap;
 
         }, null, ClassLoader::class);
     }

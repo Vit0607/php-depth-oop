@@ -16,7 +16,7 @@ class HomeController {
 
     public function __construct() {
         $this->templates = new Engine('../app/views');
-        $db = new PDO("mysql:host=localhost;dbname=app3;charset=utf8", "root", "");
+        $db = new PDO("mysql:host=MySQL-8.4;dbname=app3;charset=utf8", "root", "");
         $this->auth = new \Delight\Auth\Auth($db);
     }
     
@@ -24,7 +24,6 @@ class HomeController {
 
     {
         $this->auth->login('jvn4@mail.ru', '123');
-        d($this->auth->getRoles());die;
     
         $db = new QueryBuilder;
         $posts = $db->getAll('posts');
