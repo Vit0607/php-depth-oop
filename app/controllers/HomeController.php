@@ -5,6 +5,7 @@ namespace App\controllers;
 use App\exceptions\AccountIsBlockedException;
 use App\exceptions\NotEnoughMoneyException;
 use App\QueryBuilder;
+use Delight\Auth\Auth;
 use League\Plates\Engine;
 use PDO;
 
@@ -13,11 +14,14 @@ use function Tamtamchik\SimpleFlash\flash;
 class HomeController {
     private $templates;
     private $auth;
+    private $qb;
+    private $pdo;
 
-    public function __construct() {
-        $this->templates = new Engine('../app/views');
-        $db = new PDO("mysql:host=MySQL-8.4;dbname=app3;charset=utf8", "root", "");
-        $this->auth = new \Delight\Auth\Auth($db);
+    public function __construct(QueryBuilder $qb, Engine $engine, PDO $pdo, Auth $auth) {
+        $this->qb = $qb;
+        $this->templates = $engine;
+        $db = $pdo;
+        $this->auth = $auth;
     }
     
     public function index()
@@ -25,7 +29,7 @@ class HomeController {
     {
         $this->auth->login('jvn4@mail.ru', '123');
     
-        $db = new QueryBuilder;
+        $db = $this->qb;
         $totalItems = $db->getAll('posts');
         $items = $db->getPages('posts', 3);
 
